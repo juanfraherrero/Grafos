@@ -74,6 +74,8 @@ public:
 
 	void vaciar();
 
+	int cantida_vertices() const;
+
 private:
 	/*
 	 * Definir la estructura interna
@@ -351,6 +353,12 @@ template <typename C> void Grafo<C>::eliminar_arco(int origen, int destino)
 template <typename C> void Grafo<C>::vaciar()
 {
     _Grafo.clear(); //O(v)   //o tambien es por la cantidad de adyacentes por la eliminación de las listas?
+}
+
+template <typename C>
+int Grafo<C>::cantida_vertices() const
+{
+    return _Grafo.size();
 }
 
 #endif /* GRAFO_H_ */
